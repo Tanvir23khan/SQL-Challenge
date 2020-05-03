@@ -1,0 +1,40 @@
+
+department
+-
+department_id VARCHAR(10) PK
+depatment_name VARCHAR(50)
+
+
+employee
+-
+employee_id INT PK
+title_id VARCHAR(10) FK >- title.title_id
+birth_date DATE 
+first_name VARCHAR(50)
+last_name VARCHAR(50)
+sex CHAR
+hire_date DATE 
+
+
+department_employee
+-
+department_id VARCHAR FK >- department.department_id
+employee_id INT FK >- employee.employee_id
+
+
+department_manager
+-
+department_id VARCHAR FK >- department.department_id
+employee_id INT FK >- employee.employee_id
+
+
+salary
+-
+employee_id INT FK >- employee.employee_id
+salary INT
+
+
+title
+-
+title_id VARCHAR(10) PK
+title VARCHAR(50)
